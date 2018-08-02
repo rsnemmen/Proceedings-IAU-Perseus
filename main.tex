@@ -8,22 +8,26 @@
 
 \documentclass{iau} 
 \usepackage{graphicx}
+\usepackage{verbatim}
+\usepackage[textwidth=2.7cm,shadow]{todonotes}  
 
-\title[JD 11.~~Pre-solar grains and AGB stars] %% give here short title %%
-{What can pre-solar grains tell us \\ about AGB stars?}
+% Journal abbreviations \apj, \mnras etc (bibtex)
+\include{journals}	
 
-\author[Maria A. Lugaro \& Susanne H{\"o}fner]   %% give here short author list %%
-{Maria A. Lugaro$^1$
+
+\title[Search for QPOs in the gamma-ray emission of Perseus] %% give here short title %%
+{Search for QPOs in Perseus with \textit{Fermi} LAT}
+
+\author[Nemmen, de Menezes \& Paschalidis]   %% give here short author list %%
+{Rodrigo Nemmen$^1$, Raniere de Menezes$^1$
 %%  \thanks{Present address: Fluid Mech Inc., 24 The Street, Lagos, Nigeria.},
- \and Susanne H{\"o}fner$^2$}
+ \and Vasilios Paschalidis$^2$}
 
-\affiliation{$^1$Sterrenkundig Instituut, University of Utrecht, \\ Postbus 80000,
-NL-3508TA, Utrecht, the Netherlands \\ email: {\tt m.lugaro@phys.uu.nl} \\[\affilskip]
-$^2$Dept. of Astronomy \& Space Physics, Uppsala University, \\ Box
-515, SE-75120 Uppsala, Sweden \\email: {\tt hoefner@astro.uu.se}}
+\affiliation{$^1$Universidade de S\~ao Paulo, Instituto de Astronomia, Geof\'{\i}sica e Ci\^encias Atmosf\'ericas, Departamento de Astronomia,\\ S\~ao Paulo, SP 05508-090, Brazil \\ email: {\tt rodrigo.nemmen@iag.usp.br} \\[\affilskip]
+$^2$Dept. of Astronomy \& Steward Observatory, University of Arizona}
 
-\pubyear{2015}
-\volume{xxx}  %% insert here IAU Symposium No.
+\pubyear{2018}
+\volume{342}  %% insert here IAU Symposium No.
 \setcounter{page}{1}
 \jname{Title of your IAU Symposium}
 \editors{A.C. Editor, B.D. Editor \& C.E. Editor, eds.}
@@ -32,12 +36,7 @@ $^2$Dept. of Astronomy \& Space Physics, Uppsala University, \\ Box
 \maketitle
 
 \begin{abstract}
-Small amounts of pre-solar grains have survived in the matrices of primitive meteorites
-and interplanetary dust particles. Their detailed study in the laboratory with modern
-analytical tools provides highly accurate and detailed information with regard to stellar
-nucleosynthesis and evolution, grain formation in stellar atmospheres, and Galactic
-Chemical Evolution. Their survival puts constraints on conditions they were exposed
-to in the interstellar medium and in the Early Solar System.
+We report an analysis of the gamma-ray variability of NGC 1275--the radio galaxy at the center of the Perseus cluster. NGC 1275 has been observed continuously with the \textit{Fermi} Large Area Telescope over the last nine years. We applied different time-domain analysis methods including Fourier, wavelets and Bayesian methods, in order to search for quasi-periodic oscillations (QPO) in the gamma-ray emission. We found no evidence for any periodicity of astrophysical origin. 
 \keywords{Keyword1, keyword2, keyword3, etc.}
 %% add here a maximum of 10 keywords, to be taken form the file <Keywords.txt>
 \end{abstract}
@@ -46,317 +45,210 @@ to in the interstellar medium and in the Early Solar System.
               % remove some space above using this command.
 \section{Introduction}
 
-Almost twenty years have passed since, as a result of the search for host phases of
-isotopically unusual noble gases, the first discovery in 1987 of surviving pre-solar minerals
-(diamond and silicon carbide) in primitive meteorites. These were followed by others
-(graphite, refractory oxides, silicon nitride, and finally silicates) in the years since. Pre-solar
-grains occur in even higher abundance than in meteorites in interplanetary dust particles
-(IDPs). The result is a kind of `new astronomy' based on the study of pre-solar condensates
-with all the methods available in modern analytical laboratories.
+% NGC1275 is a radio galaxy inhabiting the center of a galaxy cluster 
+NGC 1275 is the brightest central galaxy in the nearby Perseus galaxy cluster. It is a radio galaxy producing collimated, relativistic jets of particles outflowing from its center at velocities $0.3-0.5c$ \cite{Walker1994}. These jets are strongly interacting with the intracluster medium, heating it up, offsetting radiative cooling and creating X-ray bright cavities where star formation is quenched (e.g. contributions by Churazov, Zuravleva in these proceedings). 
 
-In the `classical' approach, pioneered in the search for the noble gas carriers diamond,
-SiC and graphite, pre-solar grains are isolated by dissolving most of the meteorites (consisting
-mostly of silicate minerals) using strong acids, followed by further chemical and physical
-separation methods. For overviews at the early stage when only these types were known see
-reviews by 
-\cite[Anders \& Zinner (1993)]{AndersZinner93} and 
-\cite[Ott (1993)]{Ott93}.
+Importantly, the center of NGC 1275 is the \textit{brightest gamma-ray emitter} (e.g. \cite{ngc1275LAT}) among nearby AGN. The availability of a high-quality, high-cadence light curve (LC) observed with Fermi LAT for NGC 1275 over the last 9 years with uniform sampling make this galaxy not only a remarkable laboratory for high-energy astrophysical processes around black holes in the nearby universe but also an ideal place for mining for interesting time-domain signals due to e.g. potential massive binary black holes. 
 
-More up-to-date reviews (although only barely including the only recently found pre-
-solar silicates) are by 
-\cite[Zinner (1998)]{Zinner98}, 
-\cite[Hoppe \& Zinner (2000)]{HoppeZinner00}, 
-\cite[Nittler (2003)]{Nittler03}, and 
-\cite[Zinner (2004)]{Zinner04}. 
-Refractory oxides and silicon nitride were found in conjunction with the noble gas
-carrying minerals because of their similar chemical inertness which allowed them to survive
-the extraction procedure of the noble gas carriers. Identification of pre-solar silicates among
-the sea of `normal silicates', however, became possible only with the advent of a new
-generation of analytical instrumentation, the NanoSIMS (e.g., 
-\cite[Hoppe et al. 2004]{Hoppe_etal04}) that allowed
-the imaging search for isotopically anomalous phases in situ, i.e. without the need for
-chemical / physical extraction.
+In this contribution, we will not address the gamma-ray emission due to the galaxy cluster itself; instead, our focus is on the AGN activity. Galaxy clusters are not detected in gamma-rays, an observation that challenges the simplest hadronic models and implies a low energy density in cosmic rays \cite{Ackermann2014}. 
 
-Central to the identification of pre-solar minerals is the determination of isotopic
-compositions, which as a rule strongly deviate from the normal (Solar System) composition.
-Isotopic composition is, as a matter of fact, the main (and only safe) criterion by which they
-can be identified; hence all our known `pre-solar grains' are `circum-stellar condensates' that
-carry the isotopic signatures of nucleosynthesis processes going on in their parent stars
-(Fig.\,\ref{fig1}).
+\section{NGC 1275 gamma-ray flares}
 
-Because pre-solar grains come from different stellar sources, information on individual
-stars can only be obtained by the study of single grains. This is possible by SIMS (Secondary
-Ion Mass Spectrometry) for the light to intermediate-mass elements, RIMS (Resonance
-Ionization Mass Spectrometry) for the heavy elements, and laser heating and gas mass
-spectrometry for He and Ne.
+The broadband emission of NGC 1275 has been varying dramatically over the last forty years in radio \cite{Dutson2014}. More recently, NGC 1275 has been showing increased activity and flaring in the gamma-ray band \cite{Tanada2018}, with a broad correspondence between the high-frequency radio data and gamma-rays. NGC 1275 is also detected at TeV energies during periods of $\gamma$-ray flaring \cite{Aleksic2012}.
 
-\begin{figure}[b]
+Recently, \cite{Tanada2018} presented an analysis of eight years of Fermi-LAT (0.1-300 GeV) $\gamma$-ray observations for NGC 1275 (cf. Figure 1 in Tanada et al.). Besides finding that  the gamma-flux has been steadily increasing and is highly variable on short timescales (days to weeks--cf. also contribution of Sahakyan who reports variability on timescales of hours; \cite{Baghmanyan2017}), Tanada et al. also found essentially two distinct periods of flaring activity:
+\begin{description}
+	\item[Period A] \ From $\approx 2009$ to 2011, strong variability in spectral index, quiescent flux
+	\item[Period B] \ From $\approx 2013$ to 2016, spectral index does not change much, strong variation in flux
+\end{description}
+Based on these observations, \cite{Tanada2018} argues that in each of these periods the source is in two different states. During \textit{period A}, NGC 1275 would be in a state where there is a fresh production of nonthermal electrons (e.g.  internal shocks or magnetic reconnection). This period could be associated with the C3 hotspot observed in radio (cf. contributions by Hodgson, Savolainen in these proceedings). \textit{Period B} can be explained by variations in Doppler factor of the emitting plasma, possibly associated with a small change in the line-of-sight.
+
+%\missingfigure{slide 12? shows flares of Tanada}
+
+
+
+
+
+
+
+\section{Radio galaxies and QPOs}
+
+Quasi-periodic oscillations (QPOs) correspond to strong, narrow peaks in the Fourier power spectrum of a time series indicative of the presence of deterministic processes with a characteristic period. For this reason, QPOs are very useful as indirect probes for separating stochastic versus deterministic processes operating in the central engines of accreting black holes in stellar mass black holes and active galactic nuclei \cite{Remillard2006, Gierlinski2008}. 
+
+In the case of a radio galaxy such as NGC 1275, there are different processes associated with the central black hole(s) that could introduce a characteristic period in the jet gamma-ray light curve:
+\begin{itemize}
+\item \textit{Jet-disk instabilities} due to the unstable magnetospheric interface between the accretion flow and the jet \cite{McKinney2012} (QPO period $\tau_{\rm inst}$).
+\item Jet precession due to the Lense-Thirring precession caused by a  accretion flow misaligned with the black hole spin vector \cite{Liska2018} (period $\tau_{\rm prec}$).
+\item Supermassive binary black hole system where the main period corresponds to the binary orbital period, with possible harmonics (e.g. \cite{Roedig2012, Gold2014a}) (period $\tau_{\rm BBH}$).
+\end{itemize}
+We should expect that roughly $\tau_{\rm inst} < \tau_{\rm prec} \lesssim \tau_{\rm BBH}$. All of these processes can introduce characteristic QPOs in the NGC 1275 gamma LC, thus motivating a detailed study of this time series.  
+
+
+
+
+\section{Search for gamma-ray QPOs in NGC 1275}
+
+We used three methods to search for the presence of QPOs in the gamma LC of NGC 1275: Fourier transform, continuous wavelet transform and a Bayesian QPO search framework. In our experience, the most robust method for QPO search was the Bayesian method as we will describe below. As pointed out before (\cite{Vaughan2016} and references therein), one must be very careful to properly model the time series power spectrum (e.g. red noise, power-law) when searching for QPOs. 
+
+Figure \ref{lc} shows NGC 1275's LC extracted with standard analysis parameters in the energy range 0.1-300 GeV from a circular region of radius $15^{\circ}$ (Pass 8). The spectral index was free to vary. We used the Fermi Science Tools version v10r0p5. Whereas the upper panel clearly demonstrates the progressive increase in the gamma flux over time, an inspection of the lower panel indicates the potential presence of oscillatory behavior. 
+
+\begin{figure}[h]
 % \vspace*{-2.0 cm}
 \begin{center}
- \includegraphics[width=3.4in]{Path.eps} 
+\includegraphics[width=0.7\linewidth]{figures/observations.pdf} 
 % \vspace*{-1.0 cm}
- \caption{Path of pre-solar grains from their stellar sources to the laboratory.}
-   \label{fig1}
+\caption{NGC 1275 $\gamma$-ray light curve observed with Fermi LAT. Upper panel: LC with bins of 2 days. Lower panel: LC with bins of 20 days after a linear detrending.}
+\label{lc}
 \end{center}
 \end{figure}
 
-\section{Overview}
+Figure \ref{fourier} shows the LC power spectrumm compared with the red noise fit (cf. \cite{Torrence1998} for details on the red noise model). 
+% As a null hypothesis for the noise in the time series, we considered a red or Brownian noise spectrum–i.e. spurious stochastic noise increasing towards longer wavelengths on intervals comparable to the sample length24. 
+No QPOs are clearly evident in this figure.
 
-An overview of the currently known inventory of circumstellar grains in meteorites is
-presented in Table \ref{tab1}. Abundances of silicates are definitely, those of the other pre-solar
-grains most likely, higher in IDPs. Some comments follow below, while several specific cases
-are discussed in detail in other contributions to this volume.
+\begin{figure}[h]
+% \vspace*{-2.0 cm}
+\begin{center}
+\includegraphics[width=0.8\linewidth, page=1, trim=0 300 150 0,clip=true]{figures/plots.pdf} 
+% \vspace*{-1.0 cm}
+\caption{Power spectrum for the light curve computed with the Fourier (blue line) and  Lomb-Scargle methods (red line). The black line shows a red noise fit to the LC.  }
+\label{fourier}
+\end{center}
+\end{figure}
 
- 
-\begin{table}
-  \begin{center}
-  \caption{Overview of current knowledge on circum-stellar condensate grains in meteorites.}
-  \label{tab1}
- {\scriptsize
-  \begin{tabular}{|l|c|c|c|c|}\hline 
-{\bf Mineral} & {\bf Size [$\mu$m]} & {\bf Isotopic Signatures} & {\bf Stellar} & {\bf Contri-} \\ 
-   &  {\bf abund.}  [ppm]$^1$ & & {\bf Sources} & {\bf bution$^2$} \\ \hline
-diamond & $~0.0026$ & Kr-H, Xe-HL, Te-H & supernovae & ? \\
-   & ~1500 & & & \\ \hline
-silicon & $~0.1-10$ & enhanced $^{13}$C, $^{14}$N, $^{22}$Ne, s-process elem. & AGB stars & $> 90$~\% \\
-carbide & $~30$ & low $^{12}$C/$^{13}$C, often enh.\ $^{15}$N & J-type C-stars (?) & $< 5$~\% \\
- & & enhanced $^{12}$C, $^{15}$N, $^{28}$Si; extinct $^{26}$Al, $^{44}$Ti & Supernovae & 1~\% \\
- & & low $^{12}$C/$^{13}$C, low $^{14}$N/$^{15}$N & novae &  $0.1$~\% \\ \hline
-graphite & $~0.1-10$ & enh.\ $^{12}$C, $^{15}$N, $^{28}$Si; extinct $^{26}$Al, $^{41}$Ca, $^{44}$Ti &
- SN (WR?) & $< 80$~\% \\ 
- & $~10$ & s-process elements & AGB stars & $> 10$~\% \\
- & & low $^{12}$C/$^{13}$C  & J-type C-stars (?) & $< 10$~\% \\
- & & low $^{12}$C/$^{13}$C; Ne-E(L) & novae & 2~\% \\ \hline
- corundum/ & $~0.1-5$ & enhanced $^{17}$O, moderately depl. $^{18}$O & RGB / AGB & $> 70$~\% \\
- spinel/ & $~50$ & enhanced $^{17}$O, strongly depl. $^{18}$O & AGB stars & 20~\% \\
- hibonite & & enhanced $^{16}$O & supernovae & 1~\% \\ \hline
- silicates & $~0.1-1$ & similar to oxides above & & \\
- &  $~140$ & & & \\ \hline
- silicon & $~1$ & enhanced $^{12}$C, $^{15}$N, $^{28}$Si; extinct $^{26}$Al & supernovae & 100~\% \\
- nitride & $~ 0.002$ & & & \\ \hline
-  \end{tabular}
-  }
- \end{center}
-\vspace{1mm}
- \scriptsize{
- {\it Notes:}\\
-  $^1$For the abund.\ (in wt.\ ppm) the reported maximum values from different meteorites are given. \\
-  $^2$Note uncertainty about actual fraction of diamonds that are pre-solar and for fraction of graphite attributed to SN and AGB stars (see discussion in text).}
-\end{table}
+To settle the issue, we used the Bayesian QPO search procedure outlined in \cite{Huppenkothen2013}. This method consists of comparing the broadband noise model to a more complex model combining both the broadband noise model and a Lorentzian to account for possible QPOs. The noise model is assumed to be either a power-law or broken power-law models, similarly to the noise models assumed in time-domain analysis of X-ray binaries and Seyfert 1 X-ray data. The results from this analysis are shown in Figure \ref{bayes} demonstrating that the signal is broadly consistent with noise. There is one significant QPO which is indicated with an arrow; however, this feature is compatible with the rocking period of the \textit{Fermi} satellite.
 
-{\underline{\it Silicon carbide}}. All SiC grains in primitive meteorites are of pre-solar origin, and they are
-the best characterized. This has been helped by their comparably high contents of minor and
-trace elements. Characteristic for most grains are enhanced $^{13}$C, $^{14}$N, former presence of $^{26}$Al
-as indicated by overabundances of its daughter $^{26}$Mg, neon that is almost pure $^{22}$Ne 
-[Ne-E(H)]
-and heavy elements showing the characteristic isotopic signatures of the s-process. These
-`mainstream grains' quite obviously are condensates out of the winds of AGB stars (see
-contribution by Lugaro \& H{\"o}fner, this volume). Only a percent or so have a clearly different origin tied to
-supernovae (the `X-grains'). They are characterized by high $^{12}$C, $^{28}$Si, very high former
-abundances of $^{26}$Al as well as $^{44}$Ti and not fully understood signature in the heavy trace
-elements (see contribution by Amari \& Lodders, this volume).
+\begin{figure}[h]
+% \vspace*{-2.0 cm}
+\begin{center}
+\includegraphics[width=\linewidth, page=2, trim=50 0 50 0,clip=true]{figures/plots.pdf} 
+% \vspace*{-1.0 cm}
+\caption{Results of Bayesian QPO search applied to NGC 1275's light curve. The arrow indicates one potential QPO, which is consistent with the rocking period of the \textit{Fermi} satellite. }
+\label{bayes}
+\end{center}
+\end{figure}
 
-{\underline{\it Oxides and silicates}}. Besides diamonds (see below) silicates - not unexpectedly - are the
-most abundant of the pre-solar grains that have been found. The most characteristic features
-of oxides and silicates are contained in the oxygen isotopic composition that can be used for
-assigning each grain to one of four groups 
-(\cite[Nittler et al. 1997]{Nittler_etal97}). Grains without evidence for
-the former presence of $^{26}$Al are assumed to originate from RGB stars, those with $^{26}$Al from AGB stars.
+\begin{comment}
+Figure \ref{bhb} 
+compares the observed periodogram with a representative numerical simulation of an accreting BBH. Here I am displaying the positions of the spectral peaks computed with the Lomb-Scargle.
+For the simulation, I took the total Mdot data
+it should be mentioned that in the BBH model, the relative positions of the peaks does not change
 
-{\underline{\it Graphite and silicon nitride}}. The characteristics of most grains (see Tab.\,\ref{tab1}) have
-traditionally led to assume a SN origin (e.g., 
-\cite[Zinner 1998]{Zinner98}; 
-\cite[Hoppe \& Zinner 2000]{HoppeZinner00}). 
-However,
-this percentage may have been overestimated as most high-density graphite grains, although
-showing enhanced $^{12}$C abundances, contain s-process signatures and so are more likely to
-originate from AGB stars 
-(\cite[Croat et al.  2005]{Croat_etal05}). The rare Si$_3$N$_4$ grains show isotopic signatures
-similar to SiC-X and SN graphite grains and derive probably from supernovae as well.
+\textbf{b.} Periodograms based on the Lomb-Scargle method, comparing the main periodicities present in the observations and in a representative numerical simulation of an accreting binary SMBH system with a mass ratio 1:3\cite{Roedig2012}.
 
-{\underline{\it Nanodiamonds}}. In several ways these are the most enigmatic. Although discovered first,
-their pre-solar credentials are based solely on trace elements Te and noble gases that they
-carry. They are too small for individual analysis � each consisting of some 1000 carbon atoms
-only on average and the carbon isotopic composition of `bulk samples' (i.e., many diamond
-grains) is within the range of Solar System materials. What fraction of the diamonds is truly
-pre-solar is an as yet open question.
+\begin{figure}[h]
+% \vspace*{-2.0 cm}
+\begin{center}
+\includegraphics[width=\linewidth]{figures/periods_ls-min_diff.png} 
+% \vspace*{-1.0 cm}
+\caption{Power spectrum for the light curve computed with the Fourier (blue line) and  Lomb-Scargle methods (red line). The black line shows a red noise fit to the LC.  }
+\label{bhb}
+\end{center}
+\end{figure}
+\end{comment}
 
-\section{Implications}
 
-{\underline{\it Isotopic structures and nucleosynthesis}}. As isotopic structures are the key for
-establishing the grains as pre-solar, isotope studies are at the core of investigations that have
-been performed. Results from isotopic studies in turn are also those that bear strongest on
-astrophysics. For one, they allow us to pinpoint the grains' stellar sources. In addition, given the
-precision of the laboratory isotopic analyses, which far exceed whatever can be hoped for in
-remote analyses, they allow conclusions with regard to details of nucleosynthesis and mixing
-in the parent stars as well as Galactic Chemical Evolution. They have borne strong on, e.g. the
-need for an extra mixing process (cool bottom processing) in Red Giants and provide detailed
-constraints on the operation of the s-process in AGB stars (e.g., 
-\cite[Busso et al. 1999]{Busso_etal99}). 
-A non-standard neutron capture process (`neutron burst') may be implied by the SiC-X grains from supernovae 
-(\cite[Meyer et al. 2000]{Meyer_etal00}) and possibly the trace Xe in the diamonds (e.g., 
-\cite[Ott 2002]{Ott02}).
-The progress in analytical techniques promises more important results in the near future.
+\section{Summary}
 
-{\underline{\it Grain formation}}. Chemical composition, sizes, and microstructures of grains constrain
-conditions during condensation in stellar winds and supernova ejecta. Condensation of SiC
-apparently occurred under close to the equilibrium conditions (e.g., 
-\cite[Lodders \& Fegley 1998]{LoddersFegley98}).
-Additional constraints are imposed by trace element contents both on average 
-(\cite[Yin et al. 2006]{Yin_etal06}) 
-as well as in individual grains 
-(\cite[Amari et al. 1995]{Amari_etal95}). 
-An important relevant observation is
-the occurrence of subgrains of primarily TiC within graphite 
-(\cite[Croat et al. 2005]{Croat_etal05}).
+NGC 1275 is a rich lab for investigating high-energy phenomena and black hole physics, particularly in the time domain. It has been  brightening in radio and gamma-rays and displayed gamma-ray flares over the last nine years. %with periods where nonthermal processes might be responsible, whereas in other periods a slight change in the Doppler factor (due to e.g. jet twisting) could account for the flares. 
+Motivated by the prospect that different processes could introduce QPOs in the light curves of radio galaxies with periods ranging from months to years--such as precession and the presence of accreting binary black holes--we searched for the presence of QPOs in its Fermi-LAT light curve using a range of methods including a powerful Bayesian QPO search framework. We found no evidence for periodicities of astrophysical origin. The Bayesian QPO search method employed in this work should be a powerful tool for future searches of QPOs in AGNs and blazars.
 
-{\underline{\it The lifecycle of pre-solar grains (and maybe interstellar grains in general)}}. Interstellar grains
-are expected to be processed and eventually destroyed by sputtering or astration (e.g.,
-\cite[Draine 2003]{Draine03}), with an as yet unidentified process needed to account for the balance between
-formation and destruction. Pre-solar grains preserved in meteorites carry, in principle, a
-record of conditions they have been exposed to, which, however, is difficult to read.
-Determining an absolute age using long-lived radioisotopes is virtually ruled out by the fact
-that these systems use decay of rare constituents (e.g., K, Sr, Re, U) decaying into other rare
-elements with uncertain non-radiogenic composition. However, appearance and
-microstructures of pristine (i.e. not chemically processed) SiC show little evidence for being
-processed, indicating either that they were surprisingly young when entering the forming
-Solar System or that they were protected 
-(\cite[Bernatowicz et al. 2003]{Bernatowicz_etal03}); a similar situation is
-indicated by the lack of detectable spallation Xe produced by exposure to cosmic rays during residence in the ISM 
-(\cite[Ott et al.  2005]{Ott_etal05}). The distribution, finally, among various types of
-meteorites, provides a measure of processing in the early Solar System.
+% how to deal with annoyance due to bibtex: https://tex.stackexchange.com/questions/124874/converting-to-bibitem-in-latex
+%\bibliography{refs}
+%\bibliographystyle{plain}
 
+%\begin{comment}
 \begin{thebibliography}{}
 
-\bibitem[Amari \etal\ (1995)]{Amari_etal95}
-{Amari, S., Hoppe, P., Zinner, E., \& Lewis R.S.} 1995,
-\textit{Meteoritics}, 30, 490 
+\bibitem[Abdo \etal\ (2009)]{ngc1275LAT}
+{A.~A. Abdo, \etal\ }
+%\newblock Fermi discovery of gamma-ray emission from ngc 1275.
+\newblock {\em \apj}, 699, 31, 2009.
 
-\bibitem[Anders \& Zinner (1993)]{AndersZinner93}
-{Anders, E., \& Zinner, E.} 1993, 
-\textit{Meteoritics}, 28, 490
+\bibitem[Ackermann \etal\ (2014)]{Ackermann2014}
+M.~{Ackermann}, \etal\
+%\newblock {Search for Cosmic-Ray-induced Gamma-Ray Emission in Galaxy Clusters}.
+\newblock {\em \apj}, 787, 18, 2014.
 
-\bibitem[Bernatowicz et al. (2003)]{Bernatowicz_etal03}
-{Bernatowicz, T.J., Messenger, S., Pravdivtseva, O., Swan, P., \& Walker, R.M.} 2003, 
-\textit{Geochim. Cosmochim. Acta}, 67, 4679
+\bibitem[Aleksic \etal\ (2012)]{Aleksic2012}
+J.~{Aleksi{\'c}}, \etal\
+%\newblock {Detection of very-high energy {$\gamma$}-ray emission from NGC 1275 by the MAGIC telescopes}.
+\newblock {\em \aap}, 539, L2, 2012.
 
-\bibitem[Busso et al. (1999)]{Busso_etal99}
-{Busso, M., Gallino, R., \& Wasserburg, G.J.} 1999, 
-\textit{ARAA}, 37, 239
+\bibitem[Baghmanyan \etal\ (2017)]{Baghmanyan2017}
+V.~{Baghmanyan}, S.~{Gasparyan}, and N.~{Sahakyan}.
+%\newblock {Rapid Gamma-Ray Variability of NGC 1275}.
+\newblock {\em \apj}, 848, 111, October 2017.
 
-\bibitem[Croat, Stadermann \& Bernatowicz (2005)]{Croat_etal05}
-{Croat, T.K., Stadermann, F.J., \& Bernatowicz, T.J.} 2005, 
-\textit{ApJ}, 631, 976
+\bibitem[Dutson \etal\ (2014)]{Dutson2014}
+K.~L. {Dutson}, A.~C. {Edge}, J.~A. {Hinton}, M.~T. {Hogan}, M.~A. {Gurwell},
+  and W.~N. {Alston}.
+% \newblock {A non-thermal study of the brightest cluster galaxy NGC 1275 - the Gamma-Radio connection over four decades}.
+\newblock {\em \mnras}, 442, 2048, 2014.
 
-\bibitem[Draine (2003)]{Draine03}
-{Draine, B.T.} 2003,
-\textit{ARAA}, 41, 241
+\bibitem[Gierlinski \etal\ (2008)]{Gierlinski2008}
+Marek Gierlinski, Matthew Middleton, Martin Ward, and Chris Done.
+% \newblock A periodicity of 1 hour in x-ray emission from the active galaxy re j1034+396.
+\newblock {\em Nature}, 455, 369, 2008.
 
-\bibitem[Hoppe \& Zinner (2000)]{HoppeZinner00}
-{Hoppe, P., \& Zinner, E.} 2000, 
-\textit{J. Geophys. Res.}, A105, 10371
+\bibitem[Gold \etal\ (2014)]{Gold2014a}
+R.~{Gold}, V.~{Paschalidis}, M.~{Ruiz}, S.~L. {Shapiro}, Z.~B. {Etienne}, and
+  H.~P. {Pfeiffer}.
+% \newblock {Accretion disks around binary black holes of unequal mass: General relativistic MHD simulations of postdecoupling and merger}.
+\newblock {\em \prd}, 90, 104030, 2014.
 
-\bibitem[Hoppe, Ott \& Lugmair (2004)]{Hoppe_etal04}
-{Hoppe, P., Ott, U., \& Lugmair, G.W.} 2004, 
-\textit{New Astron. Revs}, 48, 171
+\bibitem[Huppenkothen \etal\ (2013)]{Huppenkothen2013}
+Daniela Huppenkothen, Anna~L. Watts, Phil Uttley, Alexander~J. van~der Horst,
+  Michiel van~der Klis, Chryssa Kouveliotou, Ersin Göğüş, Jonathan Granot,
+  Simon Vaughan, and Mark~H. Finger.
+% \newblock Quasi-periodic oscillations and broadband variability in short magnetar bursts.
+\newblock {\em \apj}, 768, 87, 2013.
 
-\bibitem[Lodders \& Fegley (1998)]{LoddersFegley98}
-{Lodders, K., \& Fegley, B.} 1998, 
-\textit{Meteorit. Planet. Sci.}, 33, 871
+\bibitem[Liska \etal\ (2018)]{Liska2018}
+M.~{Liska}, C.~{Hesp}, A.~{Tchekhovskoy}, A.~{Ingram}, M.~{van der Klis}, and
+  S.~{Markoff}.
+% \newblock {Formation of precessing jets by tilted black hole discs in 3D general relativistic MHD simulations}.
+\newblock {\em \mnras}, 474, L81, 2018.
 
-\bibitem[Meyer, Clayton \& The (2000)]{Meyer_etal00}
-{Meyer, B.S., Clayton, D.D., \& The, L.-S.} 2000, 
-\textit{ApJ} (Letters), 540, L49
+\bibitem[McKinney, Blandford \& Tchekhovskoy (2012)]{McKinney2012}
+J.~C. {McKinney}, A.~{Tchekhovskoy}, and R.~D. {Blandford}.
+% \newblock {General relativistic magnetohydrodynamic simulations of magnetically choked accretion flows around black holes}.
+\newblock {\em \mnras}, 423, 3083, 2012.
 
-\bibitem[Nittler (2003)]{Nittler03}
-{Nittler, L.R.} 2003, 
-\textit{Earth Planet. Sci. Lett.}, 209, 259
+\bibitem[Remillard \& McClintock (2006)]{Remillard2006}
+R.~A. {Remillard} and J.~E. {McClintock}.
+% \newblock {X-Ray Properties of Black-Hole Binaries}.
+\newblock {\em \araa}, 44, 49, 2006.
 
-\bibitem[Nittler et al. (1997)]{Nittler_etal97}
-{Nittler, L.R., Alexander, C.M.O'D., Gao, X., Walker, R.M., \& Zinner, E.} 1997,
-\textit{ApJ}, 483, 475
+\bibitem[Roedig \etal\ (2012)]{Roedig2012}
+C.~{Roedig}, A.~{Sesana}, M.~{Dotti}, J.~{Cuadra}, P.~{Amaro-Seoane}, and
+  F.~{Haardt}.
+% \newblock {Evolution of binary black holes in self gravitating discs. Dissecting the torques}.
+\newblock {\em \aap}, 545, A127, 2012.
 
-\bibitem[Ott (1993)]{Ott93}
-{Ott, U.} 1993, 
-\textit{Nature}, 364, 25
+\bibitem[Tanada \etal\ (2018)]{Tanada2018}
+K.~{Tanada}, J.~{Kataoka}, M.~{Arimoto}, M.~{Akita}, C.~C. {Cheung}, S.~W.
+  {Digel}, and Y.~{Fukazawa}.
+% \newblock {The Origins of the Gamma-Ray Flux Variations of NGC 1275 Based on Eight Years of Fermi-LAT Observations}.
+\newblock {\em \apj}, 860, 74, 2018.
 
-\bibitem[Ott (2002)]{Ott02}
-{Ott, U.} 2002,
-\textit{New Astron. Revs} 46, 513
+\bibitem[Torrence \& Compo (1998)]{Torrence1998}
+Christopher Torrence and Gilbert~P. Compo.
+%\newblock A practical guide to wavelet analysis.
+\newblock {\em Bulletin of the American Meteorological Society}, 79, 61, 1998.
 
-\bibitem[Ott et al. (2005)]{Ott_etal05}
-{Ott, U., Altmaier, M., Herpers, U., Kuhnhenn, J., Merchel, S., 
-Michel, R., \& Mohapatra, R.K.} 2005, 
-\textit{Meteorit. Planet. Sci.}, 40, 1635
+\bibitem[Vaughan \etal\ (2016)]{Vaughan2016}
+S.~{Vaughan}, P.~{Uttley}, A.~G. {Markowitz}, D.~{Huppenkothen}, M.~J.
+  {Middleton}, W.~N. {Alston}, J.~D. {Scargle}, and W.~M. {Farr}.
+% \newblock {False periodicities in quasar time-domain surveys}.
+\newblock {\em \mnras}, 461, 3145, 2016.
 
-\bibitem[Yin, Lee \& Ott (2006)]{Yin_etal06}
-{Yin, Q.-Z., Lee, C.-T. A., \& Ott, U.} 2006, 
- \textit{ApJ}, 647, 676
-
-\bibitem[Zinner (1998)]{Zinner98}
-{Zinner, E.} 1998,
- \textit{Ann. Rev. Earth Planet. Sci.}, 26, 147
-
-\bibitem[Zinner (2004)]{Zinner04}
-{Zinner, E.} 2004, in: K.K. Turekian, H.D. Holland \& A.M. Davis (eds.), 
- \textit{Treatise in Geochemistry 1} (Oxford and San Diego: Elsevier), p.\,17
+\bibitem[Walker, Romney \& Benson (1994)]{Walker1994}
+R.~C. {Walker}, J.~D. {Romney}, and J.~M. {Benson}.
+%\newblock {Detection of a VLBI counterjet in NGC 1275: A possible probe of the parsec-scale accretion region}.
+\newblock {\em \apjl}, 430, L45, 1994.
 
 \end{thebibliography}
-
-\begin{discussion}
-
-\discuss{Massey}{I�m wondering if you have considered the expected intrinsic dispersion in absolute
-magnitude of WRs --� if you consider the (large) mass range that becomes an
-early WN or late WC according to the evolutionary models, wouldn�t you expect a large
-dispersion in M$_v$?}
-
-\discuss{van der Hucht}{Indeed, we will be always left with some intrinsic scatter in M$_v$ due
-to mass differences within the same spectral subtype. But in my opinion, the current
-large dispersion is for a large fraction due to incertainties of the adopted distances of
-open clusters and OB associations.}
-
-\discuss{Walborn}{I think that the scatter in WNL absolute magnitudes is dominated by intrinsic
-spread rather than errors. In the LMC, one finds a range of $�5$ to nearly $�8$. This
-in turn likely reflects different formation channels: mass-transfer binaries, post-RSG,
-and extremely massive stars in giant H {\scshape ii} regions.}
-
-\discuss{van der Hucht}{As said above, there is likely to be intrinsic scatter. But, I wonder
-whether a scatter of 3 magnitudes perhaps reflects undetected
-multiplicity.} 
-
-\discuss{Ma\'{\i}z-Apell\'{a}niz}{I could not agree more with your comment on the need for an updated
-catalogue of O-type stars (as a follow up of that of Garmany
-{\itshape et al.} 1982). We
-are currently working on precisely that (see our poster, these Proceedings) and we will
-soon make it available.}
-
-\discuss{van der Hucht}{Wonderful.}
-
-\discuss{Koenigsberger}{Is the ratio WR/O-stars in clusters similar or different from this ratio
-for the field stars?}
-
-\discuss{van der Hucht}{I think it is different because incompleteness among field stars is even
-larger than that among cluster stars. But perhaps it should also be different because
-WR stars are older and could have drifted away from clusters, more
-than O-type stars.} 
-
-\discuss{Gies}{How many of the WR stars in your catalogue might be low mass objects?}
-
-\discuss{Walborn}{Comment: PN central stars in the WR sample would be only [WC].}
-
-\discuss{van der Hucht}{Among the WR stars in our VIIth Catalogue we doubt only one:
-WR109 (V617 Sgr), which is a peculiar object (not even a [WR] central star of a PN).
-All other stars in our cataloge are true massive Population I WR stars, and properly
-classified as such. We have not listed known Population II [WC] objects, as we did
-separately in our VIth Catalogue (van der Hucht {\itshape et al.} 1981). [WN] objects are not
-known to exist, see the comment by Nolan.}
-
-\discuss{Zinnecker}{Are all Galactic WR stars in open clusters and OB association or are there
-many WR stars in the field?}
-
-\discuss{van der Hucht}{See the VIIth WR catalogue (van der Hucht 2001): of the listed 227
-Galactic WR stars, only 53 are in open culsters and OB associations, or believed to be.
-The other 184 are supposedly field stars.}
-\end{discussion}
+%\end{comment}
 
 \end{document}
