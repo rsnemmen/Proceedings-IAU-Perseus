@@ -24,20 +24,20 @@
  \and Vasilios Paschalidis$^2$}
 
 \affiliation{$^1$Universidade de S\~ao Paulo, Instituto de Astronomia, Geof\'{\i}sica e Ci\^encias Atmosf\'ericas, Departamento de Astronomia,\\ S\~ao Paulo, SP 05508-090, Brazil \\ email: {\tt rodrigo.nemmen@iag.usp.br} \\[\affilskip]
-$^2$Dept. of Astronomy \& Steward Observatory, University of Arizona}
+$^2$Theoretical Astrophysics Program, Departments of Astronomy and Physics, \\ University of Arizona, 933 N. Cherry Ave., Tucson, AZ 85721}
 
 \pubyear{2018}
 \volume{342}  %% insert here IAU Symposium No.
 \setcounter{page}{1}
-\jname{Title of your IAU Symposium}
-\editors{A.C. Editor, B.D. Editor \& C.E. Editor, eds.}
+\jname{Perseus in Sicily: from black hole to cluster outskirts}
+\editors{K. Asada, E. Gouveia dal Pino, H. Nagai \& R. Nemmen, eds.}
 \begin{document}
 
 \maketitle
 
 \begin{abstract}
-We report an analysis of the gamma-ray variability of NGC 1275--the radio galaxy at the center of the Perseus cluster. NGC 1275 has been observed continuously with the \textit{Fermi} Large Area Telescope over the last nine years. We applied different time-domain analysis methods including Fourier, wavelets and Bayesian methods, in order to search for quasi-periodic oscillations (QPO) in the gamma-ray emission. We found no evidence for any periodicity of astrophysical origin. 
-\keywords{Keyword1, keyword2, keyword3, etc.}
+We report the analysis of the gamma-ray variability of NGC 1275--the radio galaxy at the center of the Perseus cluster. NGC 1275 has been observed continuously with the \textit{Fermi} Large Area Telescope over the last nine years. We applied different time-domain analysis methods including Fourier, wavelets and Bayesian methods, in order to search for quasi-periodic oscillations in the gamma-ray emission. We found no evidence for periodicities of astrophysical origin. 
+\keywords{gamma rays: observations, galaxies: nuclei, galaxies: jets, galaxies: active}
 %% add here a maximum of 10 keywords, to be taken form the file <Keywords.txt>
 \end{abstract}
 
@@ -46,22 +46,22 @@ We report an analysis of the gamma-ray variability of NGC 1275--the radio galaxy
 \section{Introduction}
 
 % NGC1275 is a radio galaxy inhabiting the center of a galaxy cluster 
-NGC 1275 is the brightest central galaxy in the nearby Perseus galaxy cluster. It is a radio galaxy producing collimated, relativistic jets of particles outflowing from its center at velocities $0.3-0.5c$ \cite{Walker1994}. These jets are strongly interacting with the intracluster medium, heating it up, offsetting radiative cooling and creating X-ray bright cavities where star formation is quenched (e.g. contributions by Churazov, Zuravleva in these proceedings). 
+NGC 1275 is the brightest central galaxy in the nearby Perseus galaxy cluster. It is a radio galaxy producing collimated, relativistic jets of particles outflowing from its center at velocities $0.3-0.5c$ \cite[(Walker, Romney \& Benson 1994)]{Walker1994}. These jets are strongly interacting with the intracluster medium, heating it up, offsetting radiative cooling and creating X-ray bright cavities where star formation is quenched (e.g. contributions by Churazov, Zuravleva in these proceedings). 
 
-Importantly, the center of NGC 1275 is the \textit{brightest gamma-ray emitter} (e.g. \cite{ngc1275LAT}) among nearby AGN. The availability of a high-quality, high-cadence light curve (LC) observed with Fermi LAT for NGC 1275 over the last 9 years with uniform sampling make this galaxy not only a remarkable laboratory for high-energy astrophysical processes around black holes in the nearby universe but also an ideal place for mining for interesting time-domain signals due to e.g. potential massive binary black holes. 
+Importantly, the center of NGC 1275 is the \textit{brightest gamma-ray emitter} (e.g. \cite[Abdo et al. 2009]{ngc1275LAT}) among nearby AGN. The availability of a high-quality, high-cadence light curve (LC) observed with \textit{Fermi}-LAT for NGC 1275 over the last 9 years with uniform sampling make this galaxy not only a remarkable laboratory for high-energy astrophysical processes around black holes in the nearby universe but also an ideal place for mining for interesting time-domain signals due to e.g. potential massive binary black holes. 
 
-In this contribution, we will not address the gamma-ray emission due to the galaxy cluster itself; instead, our focus is on the AGN activity. Galaxy clusters are not detected in gamma-rays, an observation that challenges the simplest hadronic models and implies a low energy density in cosmic rays \cite{Ackermann2014}. 
+In this contribution, we will not address the gamma-ray emission due to the galaxy cluster itself; instead, our focus is on the AGN activity. Galaxy clusters are not detected in gamma-rays, an observation that challenges the simplest hadronic models and implies a low energy density in cosmic rays (\cite[Ackermann et al. 2014]{Ackermann2014}). 
 
-\section{NGC 1275 gamma-ray flares}
+\section{Gamma-ray flares in NGC 1275}
 
-The broadband emission of NGC 1275 has been varying dramatically over the last forty years in radio \cite{Dutson2014}. More recently, NGC 1275 has been showing increased activity and flaring in the gamma-ray band \cite{Tanada2018}, with a broad correspondence between the high-frequency radio data and gamma-rays. NGC 1275 is also detected at TeV energies during periods of $\gamma$-ray flaring \cite{Aleksic2012}.
+The broadband emission of NGC 1275 has been varying dramatically over the last forty years in radio (\cite[Dutson et al. 2014]{Dutson2014}). More recently, NGC 1275 has been showing increased activity and flaring in the gamma-ray band (\cite[Tanada et al. 2018]{Tanada2018}), with a broad correspondence between the high-frequency radio data and gamma-rays. NGC 1275 is also detected at TeV energies during periods of $\gamma$-ray flaring (\cite[Aleksic et al. 2012]{Aleksic2012}).
 
-Recently, \cite{Tanada2018} presented an analysis of eight years of Fermi-LAT (0.1-300 GeV) $\gamma$-ray observations for NGC 1275 (cf. Figure 1 in Tanada et al.). Besides finding that  the gamma-flux has been steadily increasing and is highly variable on short timescales (days to weeks--cf. also contribution of Sahakyan who reports variability on timescales of hours; \cite{Baghmanyan2017}), Tanada et al. also found essentially two distinct periods of flaring activity:
+Recently, \cite{Tanada2018} presented an analysis of eight years of Fermi-LAT (0.1-300 GeV) $\gamma$-ray observations for NGC 1275 (cf. Figure 1 in Tanada et al.). Besides finding that  the gamma-flux has been steadily increasing and is highly variable on short timescales (days to weeks--cf. also contribution of Sahakyan who reports variability on timescales of hours; \cite[Baghmanyan et al. 2017]{Baghmanyan2017}), Tanada et al. also found two distinct periods of flaring activity.
 \begin{description}
 	\item[Period A] \ From $\approx 2009$ to 2011, strong variability in spectral index, quiescent flux
 	\item[Period B] \ From $\approx 2013$ to 2016, spectral index does not change much, strong variation in flux
 \end{description}
-Based on these observations, \cite{Tanada2018} argues that in each of these periods the source is in two different states. During \textit{period A}, NGC 1275 would be in a state where there is a fresh production of nonthermal electrons (e.g.  internal shocks or magnetic reconnection). This period could be associated with the C3 hotspot observed in radio (cf. contributions by Hodgson, Savolainen in these proceedings). \textit{Period B} can be explained by variations in Doppler factor of the emitting plasma, possibly associated with a small change in the line-of-sight.
+Based on these observations, \cite{Tanada2018} argue that the source is in two different states in each of the periods above. During \textit{period A}, NGC 1275 would be in a state where there is a fresh production of nonthermal electrons (e.g.  internal shocks or magnetic reconnection). This period could be associated with the C3 hotspot observed in radio (cf. contributions by Hodgson, Savolainen in these proceedings). \textit{Period B} can be explained by variations in the Doppler factor of the emitting plasma, possibly due to a small change in the jet orientation.
 
 %\missingfigure{slide 12? shows flares of Tanada}
 
@@ -73,36 +73,40 @@ Based on these observations, \cite{Tanada2018} argues that in each of these peri
 
 \section{Radio galaxies and QPOs}
 
-Quasi-periodic oscillations (QPOs) correspond to strong, narrow peaks in the Fourier power spectrum of a time series indicative of the presence of deterministic processes with a characteristic period. For this reason, QPOs are very useful as indirect probes for separating stochastic versus deterministic processes operating in the central engines of accreting black holes in stellar mass black holes and active galactic nuclei \cite{Remillard2006, Gierlinski2008}. 
+Quasi-periodic oscillations (QPOs) correspond to strong, narrow peaks in the Fourier power spectrum of a time series indicative of the presence of a deterministic process with a characteristic period. For this reason, QPOs are very useful as indirect probes for separating stochastic versus deterministic processes in accreting black holes in X-ray binaries and active galactic nuclei \cite{Remillard2006, Gierlinski2008}. 
 
-In the case of a radio galaxy such as NGC 1275, there are different processes associated with the central black hole(s) that could introduce a characteristic period in the jet gamma-ray light curve:
+In the case of radio galaxies such as NGC 1275 or blazars, there are different processes associated with the central black hole(s) that could introduce a characteristic period in the jet light curve:
 \begin{itemize}
-\item \textit{Jet-disk instabilities} due to the unstable magnetospheric interface between the accretion flow and the jet \cite{McKinney2012} (QPO period $\tau_{\rm inst}$).
-\item Jet precession due to the Lense-Thirring precession caused by a  accretion flow misaligned with the black hole spin vector \cite{Liska2018} (period $\tau_{\rm prec}$).
-\item Supermassive binary black hole system where the main period corresponds to the binary orbital period, with possible harmonics (e.g. \cite{Roedig2012, Gold2014a}) (period $\tau_{\rm BBH}$).
+\item \textit{Jet-disk instabilities} with QPO period $\tau_{\rm inst}$ due to the unstable magnetospheric interface between the accretion flow and the jet (\cite[McKinney, Blandford \& Tchekhovskoy 2012]{McKinney2012}).
+\item \textit{Jet precession} due to the Lense-Thirring precession (period $\tau_{\rm prec}$) caused by an accretion flow misaligned with the black hole spin vector (\cite[Liska et al. 2018]{Liska2018}).
+\item An \textit{accreting massive binary black hole system} where the main period corresponds to the binary orbital period $\tau_{\rm BBH}$, with possible harmonics (e.g. \cite[Roedig et al. 2012; Gold et al. 2014]{Roedig2012, Gold2014a}).
 \end{itemize}
-We should expect that roughly $\tau_{\rm inst} < \tau_{\rm prec} \lesssim \tau_{\rm BBH}$. All of these processes can introduce characteristic QPOs in the NGC 1275 gamma LC, thus motivating a detailed study of this time series.  
+We expect roughly 
+\begin{equation}
+\tau_{\rm inst} < \tau_{\rm prec} \lesssim \tau_{\rm BBH}.
+\end{equation} 
+All of these processes can introduce characteristic QPOs in the NGC 1275 gamma LC, thus motivating a detailed study of this time series.  
 
 
 
 
 \section{Search for gamma-ray QPOs in NGC 1275}
 
-We used three methods to search for the presence of QPOs in the gamma LC of NGC 1275: Fourier transform, continuous wavelet transform and a Bayesian QPO search framework. In our experience, the most robust method for QPO search was the Bayesian method as we will describe below. As pointed out before (\cite{Vaughan2016} and references therein), one must be very careful to properly model the time series power spectrum (e.g. red noise, power-law) when searching for QPOs. 
+We used three methods to search for the presence of QPOs in the gamma LC of NGC 1275: Fourier transform, continuous wavelet transform and a Bayesian QPO search framework. In our experience, the most robust method for QPO search was the Bayesian method as we will describe below. As pointed out before (\cite[Vaughan et al. 2016]{Vaughan2016} and references therein), one must be very careful in properly modeling the power spectrum (e.g. red noise, power-law) when searching for QPOs. 
 
-Figure \ref{lc} shows NGC 1275's LC extracted with standard analysis parameters in the energy range 0.1-300 GeV from a circular region of radius $15^{\circ}$ (Pass 8). The spectral index was free to vary. We used the Fermi Science Tools version v10r0p5. Whereas the upper panel clearly demonstrates the progressive increase in the gamma flux over time, an inspection of the lower panel indicates the potential presence of oscillatory behavior. 
+Figure \ref{lc} shows NGC 1275's LC extracted with standard analysis parameters in the energy range 0.1-300 GeV from a circular region of radius $15^{\circ}$ (Pass 8). The spectral index was left free to vary. We used the Fermi Science Tools version v10r0p5. Whereas the upper panel clearly demonstrates the progressive increase in the gamma flux over time, an inspection of the lower panel might suggest the potential presence of oscillatory behavior. 
 
 \begin{figure}[h]
 % \vspace*{-2.0 cm}
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figures/observations.pdf} 
 % \vspace*{-1.0 cm}
-\caption{NGC 1275 $\gamma$-ray light curve observed with Fermi LAT. Upper panel: LC with bins of 2 days. Lower panel: LC with bins of 20 days after a linear detrending.}
+\caption{NGC 1275 $\gamma$-ray light curve observed with \textit{Fermi}-LAT. Upper panel: LC with bins of 2 days. Lower panel: LC with bins of 20 days after a linear detrending.}
 \label{lc}
 \end{center}
 \end{figure}
 
-Figure \ref{fourier} shows the LC power spectrumm compared with the red noise fit (cf. \cite{Torrence1998} for details on the red noise model). 
+Figure \ref{fourier} shows the LC power spectrum compared with a red noise fit (cf. \cite[Torrence \& Compo 1998]{Torrence1998} for details on the red noise model). 
 % As a null hypothesis for the noise in the time series, we considered a red or Brownian noise spectrum–i.e. spurious stochastic noise increasing towards longer wavelengths on intervals comparable to the sample length24. 
 No QPOs are clearly evident in this figure.
 
@@ -111,12 +115,12 @@ No QPOs are clearly evident in this figure.
 \begin{center}
 \includegraphics[width=0.8\linewidth, page=1, trim=0 300 150 0,clip=true]{figures/plots.pdf} 
 % \vspace*{-1.0 cm}
-\caption{Power spectrum for the light curve computed with the Fourier (blue line) and  Lomb-Scargle methods (red line). The black line shows a red noise fit to the LC.  }
+\caption{Power spectra computed with the Fourier (blue line) and  Lomb-Scargle methods (red line). The black line shows a red noise fit to the LC.  }
 \label{fourier}
 \end{center}
 \end{figure}
 
-To settle the issue, we used the Bayesian QPO search procedure outlined in \cite{Huppenkothen2013}. This method consists of comparing the broadband noise model to a more complex model combining both the broadband noise model and a Lorentzian to account for possible QPOs. The noise model is assumed to be either a power-law or broken power-law models, similarly to the noise models assumed in time-domain analysis of X-ray binaries and Seyfert 1 X-ray data. The results from this analysis are shown in Figure \ref{bayes} demonstrating that the signal is broadly consistent with noise. There is one significant QPO which is indicated with an arrow; however, this feature is compatible with the rocking period of the \textit{Fermi} satellite.
+To settle the issue, we used the Bayesian QPO search procedure outlined in \cite{Huppenkothen2013}. This method consists of comparing the broadband noise model to a more complex model combining both the noise model and a Lorentzian to account for possible QPOs. The noise model is assumed to be either a power-law or broken power-law models, similarly to the noise models assumed in time-domain analysis of X-ray binaries and Seyfert 1 X-ray data. The results from this analysis are shown in Figure \ref{bayes} demonstrating that the signal is broadly consistent with noise. There is one significant QPO which is indicated with an arrow; however, this feature is compatible with the rocking period of the \textit{Fermi} satellite.
 
 \begin{figure}[h]
 % \vspace*{-2.0 cm}
@@ -151,7 +155,7 @@ it should be mentioned that in the BBH model, the relative positions of the peak
 \section{Summary}
 
 NGC 1275 is a rich lab for investigating high-energy phenomena and black hole physics, particularly in the time domain. It has been  brightening in radio and gamma-rays and displayed gamma-ray flares over the last nine years. %with periods where nonthermal processes might be responsible, whereas in other periods a slight change in the Doppler factor (due to e.g. jet twisting) could account for the flares. 
-Motivated by the prospect that different processes could introduce QPOs in the light curves of radio galaxies with periods ranging from months to years--such as precession and the presence of accreting binary black holes--we searched for the presence of QPOs in its Fermi-LAT light curve using a range of methods including a powerful Bayesian QPO search framework. We found no evidence for periodicities of astrophysical origin. The Bayesian QPO search method employed in this work should be a powerful tool for future searches of QPOs in AGNs and blazars.
+Processes such as Lense-Thirring precession and the presence of accreting binary black holes could introduce QPOs with periods in the $\sim$months to years range in the light curves of radio galaxies. Motivated by these prospects, we searched for the presence of QPOs in the \textit{Fermi}-LAT light curve of NGC 1275 using a range of methods including a powerful Bayesian QPO search framework. We found no evidence for periodicities of astrophysical origin. The Bayesian QPO search method employed in this work should be a powerful tool for future searches of QPOs in AGNs and blazars.
 
 % how to deal with annoyance due to bibtex: https://tex.stackexchange.com/questions/124874/converting-to-bibitem-in-latex
 %\bibliography{refs}
@@ -187,7 +191,7 @@ K.~L. {Dutson}, A.~C. {Edge}, J.~A. {Hinton}, M.~T. {Hogan}, M.~A. {Gurwell},
 \newblock {\em \mnras}, 442, 2048, 2014.
 
 \bibitem[Gierlinski \etal\ (2008)]{Gierlinski2008}
-Marek Gierlinski, Matthew Middleton, Martin Ward, and Chris Done.
+M. Gierlinski, M. Middleton, M. Ward, and C. Done.
 % \newblock A periodicity of 1 hour in x-ray emission from the active galaxy re j1034+396.
 \newblock {\em Nature}, 455, 369, 2008.
 
@@ -198,9 +202,7 @@ R.~{Gold}, V.~{Paschalidis}, M.~{Ruiz}, S.~L. {Shapiro}, Z.~B. {Etienne}, and
 \newblock {\em \prd}, 90, 104030, 2014.
 
 \bibitem[Huppenkothen \etal\ (2013)]{Huppenkothen2013}
-Daniela Huppenkothen, Anna~L. Watts, Phil Uttley, Alexander~J. van~der Horst,
-  Michiel van~der Klis, Chryssa Kouveliotou, Ersin Göğüş, Jonathan Granot,
-  Simon Vaughan, and Mark~H. Finger.
+D. Huppenkothen, \etal\
 % \newblock Quasi-periodic oscillations and broadband variability in short magnetar bursts.
 \newblock {\em \apj}, 768, 87, 2013.
 
@@ -233,7 +235,7 @@ K.~{Tanada}, J.~{Kataoka}, M.~{Arimoto}, M.~{Akita}, C.~C. {Cheung}, S.~W.
 \newblock {\em \apj}, 860, 74, 2018.
 
 \bibitem[Torrence \& Compo (1998)]{Torrence1998}
-Christopher Torrence and Gilbert~P. Compo.
+C. Torrence and G.~P. Compo.
 %\newblock A practical guide to wavelet analysis.
 \newblock {\em Bulletin of the American Meteorological Society}, 79, 61, 1998.
 
